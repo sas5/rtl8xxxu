@@ -1,0 +1,1 @@
+- [rtl8xxxu kernel 6.18 patch](project_rtl8xxxu_kernel618_patch.md) — local patches for mac80211 API + AP mode on RTL8188EU, not upstreamed, no dkms
