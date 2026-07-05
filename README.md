@@ -1,3 +1,39 @@
+# rtl8xxxu - Patched for Raspberry Pi Kernel 6.18+
+
+**This is a fork of [lwfinger/rtl8xxxu](https://github.com/lwfinger/rtl8xxxu) with patches for kernel 6.18+ compatibility and AP mode support.**
+
+---
+
+## What This Patch Does
+
+This patched version adds:
+- Kernel 6.18+ API compatibility - Updated mac80211 callbacks for MLO/multi-radio support
+- Channel context emulation - Fixed -ENOMEM probe crash on kernel 6.18+
+- AP mode support for RTL8188EUS - Enabled .supports_ap=1 for TP-Link TL-WN722N v2/v3
+
+---
+
+## Patches Applied by Sas5
+
+| File | Change |
+|------|--------|
+| rtl8xxxu_core.c | Kernel 6.18 API fixes + channel context emulation |
+| rtl8xxxu_8188e.c | AP mode support for RTL8188EUS (supports_ap=1) |
+| README.md | Added patch notes and credits |
+| rtl8xxxu_git.conf | New driver configuration file |
+
+---
+
+## Credits
+
+- Original driver: Jes Sorensen (lwfinger) - https://github.com/lwfinger
+- Patches and testing: Sas5
+- AI assistance: Claude Code (https://claude.ai) - Helped with kernel 6.18 API analysis, channel context emulation implementation, and driver debugging
+- Hardware tested: Raspberry Pi 4, kernel 6.18.33+rpt-rpi-v8
+- Adapter: TP-Link TL-WN722N v2/v3 (USB ID: 2357:010c)
+
+---
+
 ### Linux Kernel Module "rtl8xxxu"
 
 Driver for Realtek RTL8XXXXU usb wifi chips, which is backported from linux mainline
